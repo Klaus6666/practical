@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>prev_next#</title>
+</head>
+<style>
+    img{
+        height: 600px;
+        width: 600px;
+    }
+</style>
+<body>  
+    <section>
+        <div>
+            <div>
+                <img id="fImage" src="1.jpg"><br>
+                <button><a  href="#" onclick="setIndex(-1)"> Previous </a></button>
+                <button><a  href="#" onclick="setIndex(1)"> Next </a></button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    var imageNo= 1
+    var ImageSources=[
+      '1.jpg',
+      '2.jpg',
+      '3.jpg'
+    ]
+    function setIndex(idx) {
+        imageNo = (imageNo + idx)%3
+        document.getElementById('fImage').src = ImageSources[imageNo];
+    }
+</script>
+</html>
